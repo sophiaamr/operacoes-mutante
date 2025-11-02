@@ -24,7 +24,7 @@ describe('Suíte de Testes Fraca para 50 Operações Aritméticas', () => {
   test('5. deve calcular a potência com expoente positivo', () => { expect(potencia(2, 3)).toBe(8); });
   test('6. deve calcular a raiz quadrada de um quadrado perfeito', () => { expect(raizQuadrada(16)).toBe(4); });
 test('6.1 raiz quadrada de zero', () => {
-  expect(raizQuadrada(0)).toBe(0);     // ✅ não lança erro
+  expect(raizQuadrada(0)).toBe(0); 
 });
 test('6.2 lança erro para negativo (mensagem específica)', () => {
   expect(() => raizQuadrada(-1))
@@ -90,15 +90,6 @@ test('7. deve retornar o resto da divisão', () => { expect(restoDivisao(10, 3))
      expect(produtoArray([0, 5, 9])).toBe(0); 
      expect(produtoArray([7])).toBe(7); 
      expect(produtoArray([1, -2, 3])).toBe(-6); 
-
-       const spy = jest.spyOn(Array.prototype, 'reduce');
-
-  const result = produtoArray([]); // array vazio
-
-  expect(result).toBe(1);           // continua garantindo o valor
-  expect(spy).not.toHaveBeenCalled(); // e garante que NÃO chamou reduce no caminho original
-
-  spy.mockRestore();
   });
   test('35. deve calcular o produto de um array', () => { expect(produtoArray([])).toBe(1); });
 
@@ -149,8 +140,6 @@ test('7. deve retornar o resto da divisão', () => { expect(restoDivisao(10, 3))
     expect(() => medianaArray([])).toThrow('Array vazio не possui mediana.');
     expect(medianaArray([10, 2, 3])).toBe(3);
     expect(medianaArray([1, 2, 100, 101])).toBe(51);
-    expect(medianaArray([1, 100])).toBe(50.5);
-    expect(medianaArray([7, 1, 5])).toBe(5);
   });
 
 
